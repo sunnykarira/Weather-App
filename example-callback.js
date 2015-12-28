@@ -53,20 +53,26 @@ request({
 
 //Challenge
 
-var request = require('request');
-var url = 'http://api.openweathermap.org/data/2.5/weather?q=Delhi&units=imperial&appid=2de143494c0b295cca9337e1e96b00e0';
+// var request = require('request');
+// var url = 'http://api.openweathermap.org/data/2.5/weather?q=Delhi&units=imperial&appid=2de143494c0b295cca9337e1e96b00e0';
 
-request({
-	url: url, 
-	json: true
-}, function(error, response, body){
+var weather = require('./weather.js');  // This is coming from weather.js
 
-	if(error){
-		console.log('Unable to fetch weather');
-	}else{
-		//console.log(JSON.stringify(body, null, 4));
-		// 4  = No. of spaces to indent the JSON.
-		console.log('It\'s ' + body.main.temp + ' in ' + body.name + ' right now!');
-	}
-
+weather(function(currentWeather){
+	console.log(currentWeather);
 });
+
+// request({
+// 	url: url, 
+// 	json: true
+// }, function(error, response, body){
+
+// 	if(error){
+// 		console.log('Unable to fetch weather');
+// 	}else{
+// 		//console.log(JSON.stringify(body, null, 4));
+// 		// 4  = No. of spaces to indent the JSON.
+// 		console.log('It\'s ' + body.main.temp + ' in ' + body.name + ' right now!');
+// 	}
+
+// });

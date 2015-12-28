@@ -19,6 +19,7 @@
     "url": "https://github.com/sunnykarira/Weather-App/issues"
   },
   "dependencies": {
-    "request": "~2.60.0"
+    "request": "~2.60.0",
+    "yargs": "~3.15.0"
   }
 }
